@@ -5,8 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>Cinecoder</h1>
+    <form id="formulario">
+        <label for="nombre">Ingrese su nombre: </label>
+        <input id= "nombre" type="text" />
+        <br /><br />
+
+        <label for="edad">Ingrese su edad: </label>
+        <input id= "edad" type="text" />
+        <br /><br />
+
+        <label for="entrada">Tipo de entrada (2D, 3D o 4D): </label>
+        <input id= "entrada" type="text" />
+        <br /><br />
+
+        <label for="pago">Forma de pago (debito/credito): </label>
+        <input id= "pago" type="text" />
+        <br /><br />
+
+        <button>Comprar</button>
+    </form>
+
+    <h2>Ver carrito</h2>
+    <button id="verCarrito">Click</button>
+    <div id="usuarios"></div>
     <script src="./main.js"></script>
 </body>
 </html>

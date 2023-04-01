@@ -29,6 +29,8 @@ function agregarPersona(){
     formulario.reset();
 }
 
+
+
 const usuarios = document.getElementById('usuarios');
 
 const verCarrito = document.getElementById('verCarrito');
@@ -49,6 +51,50 @@ function mostrarPersonas(){
             <p>Forma de pago: ${persona.formaDePago}</p>
         </div>`;
         div.className = "colorDeFondo";
-        usuarios.appendChild(div);
+        usuarios.appendChild(div);  
     });
 }
+
+let boton = document.getElementById("boton");
+boton.addEventListener("click", () => {
+    Swal.fire({
+        title: 'Desea borrar el?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Aceptar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            localStorage.removeItem('personas', JSON.stringify(personas));
+            location.reload();
+        Swal.fire(
+            'Su compra ha sido cancelada'
+        )
+        }
+    });
+});
+
+let pulsar = document.getElementById("aceptar");
+let mensaje = document.getElementById("mensaje");
+
+pulsar.addEventListener("click", () => {
+    mensaje.classList.add("color");
+
+    setTimeout(() => {
+        mensaje.classList.remove("color");
+    }, 3000);
+});
+
+const traerUsuarios = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(personas);
+        }, 3000);
+    });
+};
+
+traerUsuarios()
+.then(response => {
+    console.log(response);
+})

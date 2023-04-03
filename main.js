@@ -98,3 +98,24 @@ traerUsuarios()
 .then(response => {
     console.log(response);
 })
+
+let listado = document.getElementById("listado");
+
+fetch("./data.json")
+.then(response => response.json())
+.then(data => {
+data.forEach(producto => {
+    const div = document.createElement("div");
+    div.classList.add("col-sm-4", "col");
+    div.innerHTML = `
+    <div class="card mb-3">
+        <div class="card-body">
+        <h2 class="card-title">${producto.nombre}</h2>
+        <p class="card-text">${producto.precio}</p>
+        </div>
+    </div>
+    `;
+
+    listado.append(div);
+});
+})

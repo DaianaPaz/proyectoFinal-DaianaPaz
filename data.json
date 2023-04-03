@@ -1,3 +1,5 @@
 [
-    
+    { "id": 1, "nombre": "Entradas 3x2", "precio": 3000 },
+    { "id": 2, "nombre": "Promo Lunes por persona", "precio": 700 },
+    { "id": 3, "nombre": "Menores de 10 años", "precio": "GRATIS"}
 ]
